@@ -1,0 +1,112 @@
+﻿/* ── Global Design Tokens ──────────────────────────────────── */
+:root {
+  /* Brand */
+  --c-fire:       #E8380D;
+  --c-fire-dim:   #b82d0a;
+  --c-fire-glow:  rgba(232, 56, 13, 0.18);
+  --c-gold:       #F5A623;
+  --c-gold-dim:   rgba(245, 166, 35, 0.12);
+
+  /* Surfaces */
+  --bg-void:      #080809;
+  --bg-base:      #0f0f11;
+  --bg-raised:    #161619;
+  --bg-float:     #1e1e23;
+  --bg-overlay:   #252529;
+
+  /* Borders */
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-soft:   rgba(255,255,255,0.10);
+  --border-mid:    rgba(255,255,255,0.16);
+
+  /* Text */
+  --text-primary:   #f2f2f3;
+  --text-secondary: #9999a8;
+  --text-dim:       #555565;
+
+  /* Status */
+  --c-green:  #22c55e;
+  --c-amber:  #f59e0b;
+  --c-red:    #ef4444;
+  --c-blue:   #3b82f6;
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Layout */
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+
+  /* Transitions */
+  --t-fast: 120ms ease;
+  --t-base: 200ms ease;
+  --t-slow: 350ms ease;
+}
+
+/* ── Reset ────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: var(--font-body); border: none; background: none; }
+input, textarea, select { font-family: var(--font-body); }
+
+/* ── Utility Classes ─────────────────────────────────────── */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--bg-overlay); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-mid); }
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes shimmer {
+  from { background-position: -400px 0; }
+  to   { background-position: 400px 0; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fadeUp { animation: fadeUp 0.4s ease both; }
+.animate-fadeIn { animation: fadeIn 0.3s ease both; }
+
+/* ── Toast ───────────────────────────────────────────────── */
+#toast-root {
+  position: fixed; bottom: 28px; right: 28px;
+  z-index: 9999; display: flex; flex-direction: column; gap: 8px;
+}

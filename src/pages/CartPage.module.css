@@ -1,0 +1,129 @@
+﻿.cartPage {
+  min-height: calc(100vh - 70px);
+  padding: 2rem 0;
+}
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--secondary);
+}
+.emptyCart {
+  text-align: center;
+  padding: 4rem;
+}
+.emptyCart h2 {
+  margin-bottom: 2rem;
+  color: var(--gray-dark);
+}
+.cartContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+.cartItems {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.cartItem {
+  display: grid;
+  grid-template-columns: 100px 2fr 1fr 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--gray);
+}
+.cartItem:last-child {
+  border-bottom: none;
+}
+.itemImage img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.itemDetails h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: var(--secondary);
+}
+.itemDetails p {
+  margin: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+.itemQuantity input {
+  width: 80px;
+  text-align: center;
+}
+.itemTotal {
+  text-align: right;
+}
+.removeButton {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.removeButton:hover {
+  opacity: 1;
+}
+.clearCartBtn {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.cartSummary {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+.cartSummary h3 {
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.summaryRow.total {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--gray);
+  font-size: 1.2rem;
+}
+.checkoutBtn {
+  width: 100%;
+  margin-top: 1rem;
+}
+@media (max-width: 768px) {
+  .cartContainer {
+    grid-template-columns: 1fr;
+  }
+  .cartItem {
+    grid-template-columns: 80px 1fr;
+    gap: 0.5rem;
+  }
+  .itemQuantity {
+    grid-column: 2 / 3;
+  }
+  .itemTotal {
+    grid-column: 2 / 3;
+    text-align: left;
+  }
+  .removeButton {
+    grid-column: 1 / 2;
+    justify-self: end;
+  }
+}
