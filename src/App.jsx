@@ -9,7 +9,7 @@ import AdminPage from './pages/AdminPage';
 function App() {
   return (
     <AppProvider>
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <Navbar />
         <Routes>
           <Route path="/" element={<ShopPage />} />

@@ -2,10 +2,10 @@
 import { useApp } from '../../context/AppContext';
 import styles from './Footer.module.css';
 function Footer() {
-  const { t, language } = useApp();
+  const { t, lang } = useApp();
   const currentYear = new Date().getFullYear();
   const getFooterText = () => {
-    switch(language) {
+    switch(lang) {
       case 'am':
         return '© ናትሃን ሞቶ ሱቅ ሁሉም መብቶች የተጠበቁ ናቸው';
       case 'or':
@@ -51,9 +51,9 @@ function Footer() {
           <div className={styles.footerSection}>
             <h3 className={styles.sectionTitle}>🏍️ Nathan Moto Shop</h3>
             <p className={styles.sectionText}>
-              {language === 'am' && 'ከፍተኛ ጥራት ያላቸው የሞተርሳይክል መሳሪያዎች እና መለዋወጫዎች'}
-              {language === 'or' && 'Meeshaalee fi wantoota mootaayikilii qulqulluu'}
-              {language === 'en' && 'Premium motorcycle gear and accessories'}
+              {lang === 'am' && 'ከፍተኛ ጥራት ያላቸው የሞተርሳይክል መሳሪያዎች እና መለዋወጫዎች'}
+              {lang === 'or' && 'Meeshaalee fi wantoota mootaayikilii qulqulluu'}
+              {lang === 'en' && 'Premium motorcycle gear and accessories'}
             </p>
             <div className={styles.socialLinks}>
               {socialLinks.map((social, index) => (
@@ -73,7 +73,7 @@ function Footer() {
           {/* Quick Links */}
           <div className={styles.footerSection}>
             <h3 className={styles.sectionTitle}>
-              {language === 'am' ? 'ፈጣን አገናኞች' : language === 'or' ? 'Liinkii Dafaa' : 'Quick Links'}
+              {lang === 'am' ? 'ፈጣን አገናኞች' : lang === 'or' ? 'Liinkii Dafaa' : 'Quick Links'}
             </h3>
             <ul className={styles.linkList}>
               {quickLinks.map((link, index) => (
@@ -85,7 +85,7 @@ function Footer() {
               ))}
               <li>
                 <a href="/admin" className={styles.link}>
-                  {language === 'am' ? 'አስተዳዳሪ' : language === 'or' ? 'Abboommii' : 'Admin'}
+                  {lang === 'am' ? 'አስተዳዳሪ' : lang === 'or' ? 'Abboommii' : 'Admin'}
                 </a>
               </li>
             </ul>
@@ -93,23 +93,23 @@ function Footer() {
           {/* Contact Info */}
           <div className={styles.footerSection}>
             <h3 className={styles.sectionTitle}>
-              {language === 'am' ? 'አግኙን' : language === 'or' ? 'Nu Qunnamaa' : 'Contact Us'}
+              {lang === 'am' ? 'አግኙን' : lang === 'or' ? 'Nu Qunnamaa' : 'Contact Us'}
             </h3>
             <ul className={styles.contactList}>
               <li className={styles.contactItem}>
                 <span className={styles.contactIcon}>📍</span>
-                <span>{contactInfo[language].address}</span>
+                <span>{contactInfo[lang].address}</span>
               </li>
               <li className={styles.contactItem}>
                 <span className={styles.contactIcon}>📞</span>
-                <a href={`tel:${contactInfo[language].phone}`} className={styles.contactLink}>
-                  {contactInfo[language].phone}
+                <a href={`tel:${contactInfo[lang].phone}`} className={styles.contactLink}>
+                  {contactInfo[lang].phone}
                 </a>
               </li>
               <li className={styles.contactItem}>
                 <span className={styles.contactIcon}>✉️</span>
-                <a href={`mailto:${contactInfo[language].email}`} className={styles.contactLink}>
-                  {contactInfo[language].email}
+                <a href={`mailto:${contactInfo[lang].email}`} className={styles.contactLink}>
+                  {contactInfo[lang].email}
                 </a>
               </li>
             </ul>
@@ -117,7 +117,7 @@ function Footer() {
           {/* Business Hours */}
           <div className={styles.footerSection}>
             <h3 className={styles.sectionTitle}>
-              {language === 'am' ? 'የስራ ሰዓት' : language === 'or' ? 'Sa\'aatii Hojii' : 'Business Hours'}
+              {lang === 'am' ? 'የስራ ሰዓት' : lang === 'or' ? 'Sa\'aatii Hojii' : 'Business Hours'}
             </h3>
             <ul className={styles.hoursList}>
               <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
@@ -129,16 +129,16 @@ function Footer() {
         {/* Newsletter Section */}
         <div className={styles.newsletter}>
           <h3 className={styles.newsletterTitle}>
-            {language === 'am' ? 'ለዜና ይመዝገቡ' : language === 'or' ? 'Oduufiif Galmaa\'aa' : 'Subscribe to Newsletter'}
+            {lang === 'am' ? 'ለዜና ይመዝገቡ' : lang === 'or' ? 'Oduufiif Galmaa\'aa' : 'Subscribe to Newsletter'}
           </h3>
           <form className={styles.newsletterForm} onSubmit={(e) => e.preventDefault()}>
             <input
               type="email"
-              placeholder={language === 'am' ? 'ኢሜል ያስገቡ' : language === 'or' ? 'Imeelii Galchi' : 'Enter your email'}
+              placeholder={lang === 'am' ? 'ኢሜል ያስገቡ' : lang === 'or' ? 'Imeelii Galchi' : 'Enter your email'}
               className={styles.newsletterInput}
             />
             <button type="submit" className={styles.newsletterButton}>
-              {language === 'am' ? 'ይመዝገቡ' : language === 'or' ? 'Galmaa\'i' : 'Subscribe'}
+              {lang === 'am' ? 'ይመዝገቡ' : lang === 'or' ? 'Galmaa\'i' : 'Subscribe'}
             </button>
           </form>
         </div>
