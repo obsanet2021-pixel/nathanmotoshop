@@ -56,6 +56,32 @@ export default function ShopPage() {
         </div>
       </section>
 
+      {/* ── Feature Cards ───────────────────────── */}
+      <section className={styles.features}>
+        <div className={'container ' + styles.featuresInner}>
+          <div className={styles.featureCard}>
+            <div className={styles.featureIcon}>🚚</div>
+            <h3 className={styles.featureTitle}>Fast Delivery</h3>
+            <p className={styles.featureDesc}>Same-day delivery in Addis Ababa</p>
+          </div>
+          <div className={styles.featureCard}>
+            <div className={styles.featureIcon}>✅</div>
+            <h3 className={styles.featureTitle}>Quality Parts</h3>
+            <p className={styles.featureDesc}>Genuine OEM & aftermarket parts</p>
+          </div>
+          <div className={styles.featureCard}>
+            <div className={styles.featureIcon}>🔧</div>
+            <h3 className={styles.featureTitle}>Expert Support</h3>
+            <p className={styles.featureDesc}>Technical help for installation</p>
+          </div>
+          <div className={styles.featureCard}>
+            <div className={styles.featureIcon}>💰</div>
+            <h3 className={styles.featureTitle}>Best Prices</h3>
+            <p className={styles.featureDesc}>Competitive rates on all parts</p>
+          </div>
+        </div>
+      </section>
+
       {/* ── Filter bar ──────────────────────────── */}
       <div className={'container ' + styles.filterBar} id="shop-grid">
         <div className={styles.searchWrap}>
@@ -108,6 +134,26 @@ export default function ShopPage() {
           </button>
         ))}
       </div>
+
+      {/* ── Category Showcase ───────────────────── */}
+      <section className={styles.categoryShowcase}>
+        <div className={'container ' + styles.categoryShowcaseInner}>
+          <h2 className={styles.categoryTitle}>Browse by Category</h2>
+          <div className={styles.categoryGrid}>
+            {CATEGORIES.map(c => (
+              <div
+                key={c.id}
+                className={[styles.categoryCard, category === c.id ? styles.categoryCardActive : ''].join(' ')}
+                onClick={() => setCategory(category === c.id ? '' : c.id)}
+              >
+                <div className={styles.categoryIcon}>{c.icon}</div>
+                <h3 className={styles.categoryName}>{c.label}</h3>
+                <p className={styles.categoryCount}>{products.filter(p => p.category === c.id).length} parts</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── Product grid ───────────────────────── */}
       <div className={'container ' + styles.grid}>

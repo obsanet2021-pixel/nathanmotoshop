@@ -38,6 +38,46 @@
   border-radius: 4px;
 }
 
+/* ── Feature Cards ─────────────────────────────────────────── */
+.features {
+  background: var(--bg-base);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 48px 0;
+}
+.featuresInner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.featureCard {
+  background: var(--bg-raised);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  text-align: center;
+  transition: all var(--t-base);
+}
+.featureCard:hover {
+  border-color: var(--c-fire);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(232, 56, 13, 0.15);
+}
+.featureIcon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+.featureTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.featureDesc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
 /* ── Filter Bar ───────────────────────────────────────────── */
 .filterBar {
   display: flex; align-items: center; gap: 10px;
@@ -75,6 +115,59 @@
 }
 .catSelect:focus { border-color: var(--c-fire); }
 .resultCount { font-size: 13px; color: var(--text-dim); white-space: nowrap; margin-left: 4px; }
+
+/* ── Category Showcase ─────────────────────────────────────── */
+.categoryShowcase {
+  background: var(--bg-base);
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.categoryShowcaseInner {
+  text-align: center;
+}
+.categoryTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 32px;
+}
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+.categoryCard {
+  background: var(--bg-raised);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--t-base);
+}
+.categoryCard:hover {
+  border-color: var(--c-fire);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(232, 56, 13, 0.15);
+}
+.categoryCardActive {
+  background: var(--c-fire-glow);
+  border-color: var(--c-fire) !important;
+}
+.categoryIcon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+.categoryName {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.categoryCount {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
 
 /* ── Category Pills ───────────────────────────────────────── */
 .catPills {
