@@ -1,6 +1,6 @@
 ﻿import { Link, useLocation } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
-import { LANGUAGES } from '../../data/translations';
+import { LANGUAGES } from '../../context/translations';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {

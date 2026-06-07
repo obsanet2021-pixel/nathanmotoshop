@@ -11,7 +11,7 @@ function Footer() {
       case 'or':
         return '© Naatan Mooto Suuqii Mirgi Hunda Kan Eegame';
       default:
-        return '© Nathan Moto Shop All Rights Reserved';
+        return '© Nathan Moto Shop All Rights Reserved' Developed by <a href="https://obsan2021.github.io/clover-digital/" target="_blank" rel="noopener noreferrer">Clover Digital</a>;
     }
   };
   const socialLinks = [
@@ -28,18 +28,18 @@ function Footer() {
   ];
   const contactInfo = {
     en: {
-      address: 'Addis Ababa, Ethiopia',
-      phone: '+251 911 234 567',
+      address: 'Adama, Ethiopia',
+      phone: '+251 905 864 633',
       email: 'info@nathanmotoshop.com'
     },
     am: {
-      address: 'አዲስ አበባ፣ ኢትዮጵያ',
-      phone: '+251 911 234 567',
+      address: 'አዳማ፣ ኢትዮጵያ',
+      phone: '+251 905 864 633',
       email: 'info@nathanmotoshop.com'
     },
     or: {
-      address: 'Finfinnee, Itoophiyaa',
-      phone: '+251 911 234 567',
+      address: 'Adama, Itoophiyaa',
+      phone: '+251 905 864 633',
       email: 'info@nathanmotoshop.com'
     }
   };

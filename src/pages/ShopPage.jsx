@@ -1,6 +1,6 @@
 ﻿import { useState, useMemo } from 'react';
-import { useApp } from '../../context/AppContext';
-import { CATEGORIES } from '../../data/products';
+import { useApp } from '../context/AppContext';
+import { CATEGORIES } from '../data/products';
 import ProductCard from '../shop/ProductCard';
 import { Button, Empty } from '../shared/Shared';
 import styles from './ShopPage.module.css';

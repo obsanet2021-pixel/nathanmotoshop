@@ -1,5 +1,5 @@
 ﻿import { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import { T } from '../data/translations';
+import { T } from './translations';
 import { INITIAL_PRODUCTS } from '../data/products';
 
 const AppContext = createContext(null);
