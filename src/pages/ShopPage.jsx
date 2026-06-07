@@ -1,8 +1,8 @@
 ﻿import { useState, useMemo } from 'react';
 import { useApp } from '../context/AppContext';
 import { CATEGORIES } from '../data/products';
-import ProductCard from '../shop/ProductCard';
-import { Button, Empty } from '../shared/Shared';
+import ProductCard from '../components/shop/ProductCard';
+import { Button, Empty } from '../components/shared/Shared';
 import styles from './ShopPage.module.css';
 
 export default function ShopPage() {
